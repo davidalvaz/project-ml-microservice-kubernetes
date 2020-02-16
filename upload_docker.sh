@@ -5,11 +5,14 @@
 
 # Step 1:
 # Create dockerpath
-# dockerpath=<your docker ID/path>
+dockerpath="dalvaz/ml-microservice-api"
 
 # Step 2:  
 # Authenticate & tag
 echo "Docker ID and Image: $dockerpath"
+docker login
+docker tag ml-microservice-api:1.0 "$dockerpath":1.0
 
 # Step 3:
 # Push image to a docker repository
+docker push "$dockerpath":1.0
